@@ -24,7 +24,7 @@ public class Assignmentsale {
 		
 		driver.findElement(By.name("firstname")).sendKeys("shanmuga");
 		driver.findElement(By.name("lastname")).sendKeys("priya");
-		driver.findElement(By.name("reg_email__")).sendKeys("98945669");
+		driver.findElement(By.name("reg_email__")).sendKeys("9894566901");
 		driver.findElement(By.id("password_step_input")).sendKeys("98945669");
 		WebElement drp1 = driver.findElement(By.id("day"));
 		Select drpDwn1 = new Select(drp1);
