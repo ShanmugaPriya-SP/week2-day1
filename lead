@@ -1,0 +1,54 @@
+package august14;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DropDown {
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		String title = driver.getTitle();
+		System.out.println(title);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.findElement(By.id("username")).sendKeys("demosalesmanager");
+		driver.findElement(By.id("password")).sendKeys("crmsfa");
+		driver.findElement(By.className("decorativeSubmit")).click();
+		driver.findElement(By.linkText("CRM/SFA")).click();
+		driver.findElement(By.linkText("Leads")).click();
+		driver.findElement(By.linkText("Create Lead")).click();
+		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("testleaf");
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("first");
+		driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Last");
+		
+		
+		WebElement drp1 = driver.findElement(By.id("createLeadForm_dataSourceId"));
+		Select drpDwn1 = new Select(drp1);
+		drpDwn1.selectByIndex(1);
+		
+		WebElement drp2 = driver.findElement(By.id("createLeadForm_marketingCampaignId"));
+		Select drpDwn2 = new Select(drp2);
+		drpDwn2.selectByValue("9002");
+		
+		WebElement drp3 = driver.findElement(By.id("createLeadForm_industryEnumId"));
+		Select drpDwn3 = new Select(drp3);
+		drpDwn3.selectByVisibleText("Aerospace");
+		
+		
+		
+		
+		
+				
+				
+		
+	}
+		
+}
