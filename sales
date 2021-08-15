@@ -9,8 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Week2Assignment {
-
+public class Assignmentsale {
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
 
@@ -20,25 +19,25 @@ public class Week2Assignment {
 		System.out.println(title);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.findElement(By.id("UserFirstName-2kwA")).sendKeys("shanmuga");
-		driver.findElement(By.id("UserLastName-7MAT")).sendKeys("priya");
-		driver.findElement(By.id("UserEmail-Sshz")).sendKeys("abc.s");
-		driver.findElement(By.id("CompanyName-nCHq")).sendKeys("tesleaf");
-		driver.findElement(By.id("UserPhone-HQ76")).sendKeys("98945669");
-		WebElement drp1 = driver.findElement(By.id("UserTitle-3wdG"));
+		driver.findElement(By.name("UserFirstName")).sendKeys("shanmuga");
+		driver.findElement(By.id("UserLastName")).sendKeys("priya");
+		driver.findElement(By.id("UserEmail")).sendKeys("abc.s");
+		driver.findElement(By.id("CompanyName")).sendKeys("tesleaf");
+		driver.findElement(By.id("UserPhone")).sendKeys("98945669");
+		WebElement drp1 = driver.findElement(By.name("UserTitle"));
 		Select drpDwn1 = new Select(drp1);
 		drpDwn1.selectByValue("Sales_Manager_AP");
-		WebElement drp2 = driver.findElement(By.id("CompanyEmployees-Dzmt"));
+		WebElement drp2 = driver.findElement(By.name("CompanyEmployees"));
 		Select drpDwn2 = new Select(drp2);
 		drpDwn2.selectByValue("9");
-		WebElement drp3 = driver.findElement(By.id("CompanyCountry-1Jh9"));
+		WebElement drp3 = driver.findElement(By.id("CompanyCountry"));
 		Select drpDwn3 = new Select(drp3);
 		drpDwn3.selectByVisibleText("Albania");
-		WebElement drp4 = driver.findElement(By.id("SubscriptionAgreement-FwZa-cbxLbl"));
+		WebElement drp4 = driver.findElement(By.className("checkbox-ui"));
 		drp4.click();	
 		
 		driver.findElement(By.name("start my free trial")).click();
 		
-
+	
 }
 }
