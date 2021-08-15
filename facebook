@@ -14,7 +14,7 @@ public class Assignmentsale {
 		WebDriverManager.chromedriver().setup();
 
 		ChromeDriver driver = new ChromeDriver();
-		driver.get("https://www.salesforce.com/in/form/signup/freetrial-sales/?d=70130000000Enyk");
+		driver.get("https://en-gb.facebook.com/");
 		String title = driver.getTitle();
 		System.out.println(title);
 		driver.manage().window().maximize();
